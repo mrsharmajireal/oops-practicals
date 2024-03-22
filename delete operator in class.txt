@@ -1,0 +1,43 @@
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+class student
+{
+	string fname.1name;
+	int age;
+	pubic:
+		student()
+		{
+			cout<<"Constructor is called\n";
+		}
+		student(string fname,string 1name,int age)
+		{
+			this->fname=fname;
+			this->1name=1name;
+			this->age=age;
+		}
+		void display()
+		{
+			cout<<"First name:"<<fname<<endl;
+			cout<<"Last Name:"<<1name<<endl;
+			cout<<"Age:"<<age<<endl;
+		}
+		void*operator new(size_r size)
+		{
+			cout<<"Overloading new oprator with size:"<<size<<endl;
+			void*p=::operator new(size);
+			//void*p=malloc(size);
+			return p;		
+		}
+		void operator delete(void*p)
+		{
+			cout<<"Overloading delete operator"<<endl;
+			free(p);
+		}
+}
+int main()
+{
+	student*p=new student("Aastha","Patil",18);
+	p->display();
+	delete p;
+}

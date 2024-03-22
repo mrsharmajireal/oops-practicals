@@ -1,0 +1,63 @@
+#include<iostream>
+using namespace std;
+class Student{
+	public:
+		int rno;
+		string name;
+		void setData(int r,string n)
+		{
+			rno=r;
+			name=n;	
+		}
+};
+class Test:public Student{
+	public:
+	int m1,m2,m3,m4,m5;
+	void setMarks()
+	{
+		cout<<"enter marks for 5 subject:"<<endl;
+		cin>>m1>>m2>>m3>>m4>>m5;
+	}
+};
+class Score{
+	public:
+		int sc;
+		void setScore()
+{
+
+				cout<<"enter score of sports:"<<endl;
+		cin>>sc;
+		
+	}
+};
+class Result:public Test,public Score
+{
+	public:
+		int total;
+		float avg;
+		void printResult()
+		{
+			total=m1+m2+m3+m4+m5;
+				avg=total/5;
+cout<<"Student roll no:"<<rno<<endl;
+cout<<"Student Name no:"<<name<<endl;
+cout<<"Student Marks1:"<<m1<<endl;		
+cout<<"Student Marks2:"<<m2<<endl;
+cout<<"Student Marks3:"<<m3<<endl;
+cout<<"Student Marks4:"<<m4<<endl;
+cout<<"Student Marks5:"<<m5<<endl;
+cout<<"Student Total Marks:"<<total<<endl;
+cout<<"Student Average:"<<avg<<endl;
+cout<<"Student Sports score:"<<sc<<endl;
+}
+};
+int main()
+{
+	Result r;
+	r.setData(1,"anuja");
+	r.setMarks();
+	r.setScore();
+	cout<<"*****Result-2022-23*****\n";
+	r.printResult();
+	return 0;
+	}

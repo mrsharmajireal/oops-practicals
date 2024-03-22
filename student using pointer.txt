@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+	class Student{
+		public:
+		string name;
+		int rno;
+		void assign(int b,string n)
+		{
+		cout<<"The Roll noof student is:"<<b<<endl;
+		cout<<"The Name of the student is:"<<n<<endl;
+		}
+	};
+	int main()
+	{
+		int Student::*ptiptr=&Student::rno;
+		string Student::*ptsptr=&Student::name;
+		void(Student::*ptfptr)(int,string)=&Student::assign;
+		Student xobject;
+		xobject.*ptiptr=10;
+		xobject.*ptsptr="Spruha";
+		cout<<"The value of Roll no is"<<xobject.*ptiptr<<endl;
+			cout<<"The value of Name is"<<xobject.*ptsptr<<endl;
+			(xobject.*ptfptr)(20,"anuja");
+			} 

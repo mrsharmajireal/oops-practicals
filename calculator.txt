@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	char c;
+	int n1,n2,ch;
+	float ans;
+	cout<<"*******CALCULATOR********\n";
+	do{
+		cout<<"\n Enter ur choice:\n 1.Addition\n 2.Subtractor\n 3.Multiplication\n 4.division\n";
+		cin>>ch;
+		switch(ch)
+		{
+			case 1:
+				ans=n1+n2;
+				break;
+				case 2:
+					ans=n1-n2;
+					break;
+					case 3:
+						ans=n1*n2;
+						break;
+						case 4:
+							ans=n1/n2;
+							break;
+							default:
+								cout<<"Invalid Choice";
+							}
+							cout<<"\nResult="<<ans;
+							cout<<"\n Do you want to continue";
+							cin>>c;
+							}while(c=='y');
+							return 0;
+							
+		}
+	

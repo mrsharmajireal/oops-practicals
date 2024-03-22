@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+void cube(int s)
+{
+cout<<"\nVolume of Cube:"<<s*s*s;
+}
+void rectangle(int l,int w,int h)
+{
+cout<<"\nVolume of Rectangle:"<<l*w*h;
+}
+int main()
+{
+	int side,length,width,height;
+	cout<<"\n Enter side of square:\n";
+	cin>>side;
+	cube(side);
+	cout<<"\n Enter length,width,height of rectangle\n";
+	cin>>length>>width>>height;
+	rectangle(length,width,height);
+	return 0;
+	}	

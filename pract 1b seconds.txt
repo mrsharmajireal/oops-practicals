@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int no,i,j;
+	bool flag=true;
+	cout<<"Enter any number"<<endl;
+	cin>>no;
+	for(i=2;i<=no;i++)
+	{
+		for(j=2;j<=no;j++)
+	{
+		if(i!=j&&i%j==0)
+		{
+			flag=false;
+			break;
+		}
+	}
+	if(flag==true)
+	cout<<i<<"is prime\n";
+	flag=true;
+	}
+	return 0;
+}
+	

@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+class B;
+class A
+{
+public:
+	int a;
+	friend int max(A m,B n);
+	void show(int x)
+	{
+	a=x;
+	cout<<"\n Value of a="<<a;
+}
+};
+class B
+{
+public:
+	int b;
+	friend int max(A m,B n);
+	void show(int x)
+	{
+     b=x;
+     cout<<"\n Value of b="<<b;
+ }
+};
+int max(A m,B n)
+{
+	return m.a>n.b?m.a:n.b;
+}
+int main(){
+cout<<"Friend Function Demo"<<endl;
+A m;
+B n;
+cout<<"\n Class A"<<endl;
+m.show(50);
+cout<<"\n Class B"<<endl;
+n.show(20);
+cout<<"\n Maximum number is:="<<max(m.a,n.b);
+return 0;
+}
+	
