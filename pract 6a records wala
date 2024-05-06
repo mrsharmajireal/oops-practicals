@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+
+class Person {
+private:
+    std::string name;
+    int age;
+public:
+    Person(std::string n, int a) : name(n), age(a) {}
+
+    // Function to compare ages and return the eldest person using this pointer
+    Person* eldest(Person* other) {
+        if (this->age > other->age) {
+            return this;
+        } else {
+            return other;
+        }
+    }
+
+    // Function to display person details
+    void display() {
+        std::cout << "Name: " << name << ", Age: " << age << std::endl;
+    }
+};
+
+int main() {
+    // Creating person objects
+    Person person1("Alice", 35);
+    Person person2("Bob", 40);
+    Person person3("Charlie", 30);
+
+    // Finding the eldest person using this pointer
+    Person* eldestPerson = person1.eldest(&person2)->eldest(&person3);
+
+    // Displaying the eldest person
+    std::cout << "The eldest person is: ";
+    eldestPerson->display();
+
+    return 0;
+}
