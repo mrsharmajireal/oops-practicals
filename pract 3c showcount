@@ -1,0 +1,34 @@
+#include <iostream>
+
+class MyClass {
+private:
+    static int count; // Static member to keep track of object count
+
+public:
+    MyClass() {
+        count++; // Increment count each time an object is created
+    }
+
+    ~MyClass() {
+        count--; // Decrement count each time an object is destroyed
+    }
+
+    static void ShowCount() {
+        std::cout << "Number of objects created: " << count << std::endl;
+    }
+};
+
+int MyClass::count = 0; // Initialize static member count
+
+int main() {
+    MyClass obj1;
+    MyClass obj2;
+    MyClass obj3;
+
+    MyClass::ShowCount(); // Display count after creating 3 objects
+
+    MyClass obj4;
+    MyClass::ShowCount(); // Display count after creating 4th object and destroying it
+
+    return 0;
+}
