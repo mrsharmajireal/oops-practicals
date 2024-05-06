@@ -1,0 +1,28 @@
+#include <iostream>
+
+int main() {
+    int numerator, denominator, result;
+    
+    std::cout << "Enter numerator: ";
+    std::cin >> numerator;
+    
+    std::cout << "Enter denominator: ";
+    std::cin >> denominator;
+
+    try {
+        if (denominator == 0) {
+            throw "Division by zero is not allowed!";
+        }
+
+        result = numerator / denominator;
+        std::cout << "Result of division: " << result << std::endl;
+    }
+    catch (const char* errorMessage) {
+        std::cerr << "Error: " << errorMessage << std::endl;
+    }
+    catch (...) {
+        std::cerr << "An unknown error occurred." << std::endl;
+    }
+
+    return 0;
+}
