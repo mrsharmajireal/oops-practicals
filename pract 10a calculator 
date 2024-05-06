@@ -1,0 +1,46 @@
+#include <iostream>
+
+template<typename T>
+class Calculator {
+public:
+    T add(T a, T b) {
+        return a + b;
+    }
+
+    T subtract(T a, T b) {
+        return a - b;
+    }
+
+    T multiply(T a, T b) {
+        return a * b;
+    }
+
+    T divide(T a, T b) {
+        if (b == 0) {
+            std::cerr << "Error: Division by zero!" << std::endl;
+            return 0;
+        }
+        return a / b;
+    }
+};
+
+int main() {
+    Calculator<int> intCalculator;
+    Calculator<float> floatCalculator;
+
+    // Integer calculations
+    std::cout << "Integer calculations:" << std::endl;
+    std::cout << "5 + 3 = " << intCalculator.add(5, 3) << std::endl;
+    std::cout << "5 - 3 = " << intCalculator.subtract(5, 3) << std::endl;
+    std::cout << "5 * 3 = " << intCalculator.multiply(5, 3) << std::endl;
+    std::cout << "5 / 3 = " << intCalculator.divide(5, 3) << std::endl;
+
+    // Float calculations
+    std::cout << "\nFloat calculations:" << std::endl;
+    std::cout << "5.5 + 3.2 = " << floatCalculator.add(5.5, 3.2) << std::endl;
+    std::cout << "5.5 - 3.2 = " << floatCalculator.subtract(5.5, 3.2) << std::endl;
+    std::cout << "5.5 * 3.2 = " << floatCalculator.multiply(5.5, 3.2) << std::endl;
+    std::cout << "5.5 / 3.2 = " << floatCalculator.divide(5.5, 3.2) << std::endl;
+
+    return 0;
+}
