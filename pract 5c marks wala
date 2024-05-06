@@ -1,0 +1,64 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+class Student {
+private:
+    int rollNumber;
+public:
+    Student(int roll) : rollNumber(roll) {}
+    int getRollNumber() const { return rollNumber; }
+};
+
+class Test {
+private:
+    std::vector<int> scores;
+public:
+    Test() {}
+    void addScore(int score) { scores.push_back(score); }
+    int getTotalScore() const {
+        int total = 0;
+        for (int score : scores) {
+            total += score;
+        }
+        return total;
+    }
+};
+
+class Sports {
+private:
+    int score;
+public:
+    Sports(int s) : score(s) {}
+    int getScore() const { return score; }
+};
+
+class Result {
+public:
+    static void displayResult(const Student& student, const Test& test, const Sports& sports) {
+        std::cout << "Student Roll Number: " << student.getRollNumber() << std::endl;
+        std::cout << "Total Test Score: " << test.getTotalScore() << std::endl;
+        std::cout << "Sports Score: " << sports.getScore() << std::endl;
+        int total = test.getTotalScore() + sports.getScore();
+        std::cout << "Final Total Score: " << total << std::endl;
+    }
+};
+
+int main() {
+    // Create a student
+    Student student(101);
+
+    // Create a test object and add scores
+    Test test;
+    test.addScore(85);
+    test.addScore(90);
+    test.addScore(75);
+
+    // Create a sports object
+    Sports sports(95);
+
+    // Display the final result
+    Result::displayResult(student, test, sports);
+
+    return 0;
+}
